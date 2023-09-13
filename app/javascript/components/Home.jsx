@@ -1,4 +1,5 @@
 import React from "react";
+import Recipes from "./Recipes";
 
 export default () => (
   <div className="py-16 bg-white sm:py-24 lg:py-32">
@@ -29,5 +30,6 @@ export default () => (
         </div>
       </form>
     </div>
+    <Recipes />
   </div>
 );
