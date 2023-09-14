@@ -4,7 +4,7 @@ module RecipesFinder
       unions = ingredients.map {
         <<-SQL
           SELECT recipe_id, ? AS ingredient FROM ingredients
-          WHERE content LIKE ?
+          WHERE LOWER(content) LIKE ?
           GROUP BY recipe_id
         SQL
       }.join(" UNION ")
@@ -33,7 +33,7 @@ module RecipesFinder
 
     recipes = Recipe.find_by_sql(ActiveRecord::Base.sanitize_sql_array([
       query.squish,
-      *ingredients.map { |i| [i, "%#{i}%"] }.flatten,
+      *ingredients.map { |i| [i, "%#{i.downcase}%"] }.flatten,
       ingredients.size
     ]))
 
