@@ -73,6 +73,7 @@ group :development do
   gem "rubocop-minitest"
   gem "rubocop-packaging"
   gem "rubocop-performance"
+  gem "brakeman"
 end
 
 group :test do

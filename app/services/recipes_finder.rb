@@ -31,11 +31,11 @@ module RecipesFinder
       SQL
     end
 
-    recipes = Recipe.find_by_sql([
+    recipes = Recipe.find_by_sql(ActiveRecord::Base.sanitize_sql_array([
       query.squish,
       *ingredients.map { |i| [i, "%#{i}%"] }.flatten,
       ingredients.size
-    ])
+    ]))
 
     Rails.logger.info("Found #{recipes.size} recipes")
     recipes
