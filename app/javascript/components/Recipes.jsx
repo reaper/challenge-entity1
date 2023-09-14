@@ -72,6 +72,14 @@ class Recipes extends React.Component {
                       Author: {recipe.attributes.author}
                     </p>
                   </div>
+
+                  <div className="relative overflow-y-scroll h-28 group">
+                    {recipe.attributes.ingredients.map((ingredient, index) => (
+                      <span key={index} className="inline-flex items-center px-2 py-1 mb-1 mr-1 text-xs font-medium text-gray-600 rounded-md bg-yellow-50 ring-1 ring-inset ring-gray-500/10">
+                      {ingredient.content}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

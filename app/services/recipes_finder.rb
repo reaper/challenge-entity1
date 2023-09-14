@@ -1,5 +1,5 @@
 module RecipesFinder
-  def self.find_recipes(ingredients = [])
+  def self.from_ingredients(ingredients = [])
     query = if ingredients.any?
       unions = ingredients.map {
         <<-SQL
@@ -20,14 +20,14 @@ module RecipesFinder
         FROM recipes, recipe_for_ingredients_count
         WHERE recipes.id = recipe_for_ingredients_count.recipe_id
         ORDER BY recipes.ratings DESC
-        LIMIT 10
+        LIMIT 9
       SQL
     else
       <<-SQL
         SELECT recipes.*
         FROM recipes
         ORDER BY recipes.ratings DESC
-        LIMIT 10
+        LIMIT 9
       SQL
     end
 
