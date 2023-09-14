@@ -270,6 +270,7 @@ DEPENDENCIES
   debug
   jbuilder
   jsbundling-rails
+  parallel
   pg (~> 1.1)
   puma (~> 6.3)
   rack-mini-profiler
