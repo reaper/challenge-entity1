@@ -1,3 +1,6 @@
+[![Linters](https://github.com/reaper/pennylane-challenge/actions/workflows/linters.yml/badge.svg)](https://github.com/reaper/pennylane-challenge/actions/workflows/linters.yml)
+[![CI](https://github.com/reaper/pennylane-challenge/actions/workflows/ci.yml/badge.svg)](https://github.com/reaper/pennylane-challenge/actions/workflows/ci.yml)
+
 # Instructions
 ## Problem statement
 
