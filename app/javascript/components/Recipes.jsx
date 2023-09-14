@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const Recipes = () => {
-  const [recipes, setRecipes] = useState([]);
+class Recipes extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  useEffect(() => {
-    fetch("/api/v1/recipes")
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error("Unable to fetch recipes");
-      })
-      .then((res) => {
-        setRecipes(res.data)
-      })
-  }, []);
-
-  return (
-    <>
+  render() {
+    return (
       <div className="py-24 bg-white sm:py-32">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
@@ -27,7 +16,7 @@ const Recipes = () => {
             </p>
           </div>
           <div className="max-w-2xl mx-auto mt-16 grid grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {recipes.map((recipe, index) => (
+            { this.props.recipes.map((recipe, index) => (
               <div key={index} className="flex flex-col items-start justify-between">
                 <div className="relative w-full">
                   <img
@@ -89,8 +78,8 @@ const Recipes = () => {
           </div>
         </div>
       </div>
-    </>
-  );
-};
+    );
+  }
+}
 
 export default Recipes;
