@@ -71,6 +71,9 @@ I wanted to give reasons why I used some gems:
 - Split more react components
 - Used UNION in the SQL query, maybe there is a more relevant/elegant way to do it in one query
 - Add system tests to check react components rendering
+- Throttle api access
+- Add user authentication
+- Track visits (with `ahoy` gem for example)
 
 ## Database structure
 
