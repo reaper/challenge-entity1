@@ -29,6 +29,30 @@ bin/dev # with foreman
 overmind s -p 3000 # with overmind
 ```
 
+## Tests
+
+I implemented 9 tests to experience `api/v1/recipes`
+
+```bash
+Running 9 tests in a single process (parallelization threshold is 50)
+Run options: -v --seed 16199
+
+# Running:
+
+Api::V1::RecipesControllerTest#test_should_get_recipes = 0.01 s = .
+Api::V1::RecipesControllerTest#test_shouldn't_get_recipes_with_query_param_not_matching_any_recipe = 0.03 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_blank_query_param = 0.02 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_query_params_matching_recipes_with_ingredient = 0.09 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_matching_data = 0.02 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_query_param_matching_a_recipe = 0.07 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_query_param_and_without_data = 0.00 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_query_param_matching_recipes_with_ingredient = 0.08 s = .
+Api::V1::RecipesControllerTest#test_should_get_recipes_with_data = 0.03 s = .
+
+Finished in 0.359693s, 25.0213 runs/s, 80.6243 assertions/s.
+9 runs, 29 assertions, 0 failures, 0 errors, 0 skips
+```
+
 ## Used gems
 
 I wanted to give reasons why I used some gems:
