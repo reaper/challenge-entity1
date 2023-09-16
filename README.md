@@ -7,7 +7,7 @@ Hi and welcome to the pennylane challenge!
 
 I'm Pierre and you're about to judge the project I made to answer to the challenge.
 
-First I would like to thank you to take time to review it: I hope you will get satisfaction about its content.
+First I would like to thank you for the time you take to review it: I hope you will get satisfaction about its content.
 
 ![Screenshot 2023-09-16 at 16 38 08](https://github.com/reaper/pennylane-challenge/assets/82464/25c1c206-9cff-4a8f-8ee3-41a893870734)
 
