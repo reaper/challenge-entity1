@@ -4,9 +4,9 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
-    "autoprefixer": "^10.4.15",
+    "autoprefixer": "^10.4.16",
     "esbuild": "^0.19.3",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
