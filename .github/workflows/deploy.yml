@@ -16,6 +16,8 @@ jobs:
     name: Dokku
     needs: [ci]
     runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
     steps:
       - name: Cloning repo
         uses: actions/checkout@v3
