@@ -1,0 +1,32 @@
+---
+name: 'Deploy'
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: CI
+    uses: ./.github/workflows/ci.yml
+
+  dokku:
+    name: Dokku
+    needs: [ci]
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          branch: main
+          git_remote_url: 'ssh://dokku@fiwares.com:22/entity1-challenge-production'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
